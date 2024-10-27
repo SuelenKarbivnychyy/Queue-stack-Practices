@@ -14,10 +14,8 @@ class Queue:
       pass
    
 
-   def enqueue(self):       #Time complexity of O(n)
-      """Adding an item to the end of a Queue"""
-
-      items = ["a", "b", "c"]
+   def enqueue(self, items):       #Time complexity of O(n)
+      """Add an item to the end of a Queue"""      
 
       for item in items:
         self.queue.append(item)
@@ -40,7 +38,7 @@ class Queue:
 
 
 my_list = Queue()
-print(my_list.enqueue())
+print(my_list.enqueue(["a", "b", "c"]))
 print(my_list.dequeue())
 print(my_list.is_empty())
 
