@@ -38,19 +38,77 @@ class Queue:
 
 
 my_list = Queue()
-print(my_list.enqueue(["a", "b", "c"]))
-print(my_list.dequeue())
-print(my_list.is_empty())
+# print(my_list.enqueue(["a", "b", "c"]))
+# print(my_list.dequeue())
+# print(my_list.is_empty())
 
 
 
-         
-
-
+############################        
 
       
       
+# Part 1: Define a class for a linked list node.
+
+# Part 2: Write a function that takes in the head node of a linked list and prints the data of every node in the list.
 
 
+
+class Node:
+   """Node in a linked list."""
+
+   def __init__(self, data):
+      self.data = data
+      self.next = None
+
+   def __str__(self):
+      return str(self.data)
+
+   def __repr__(self):
+      return f"<Node object. Data: {self}; Next: {self.next}>"
+
+
+
+class LinkedList:
+   """Linked list."""
+
+   def __init__(self):
+      self.head = None
+
+
+   def print_list(self):
+      """Print all items in the list"""      
+
+      current_node = self.head   
+   
+      while current_node:
+         print(f" Current node: {current_node.data}, Next node: {current_node.next}")
+         current_node = current_node.next
+
+
+   def create_from_list(self, data_list):
+      self.head = Node(data_list[0])
+      current_node = self.head
+
+      for data in data_list[1:]:
+         current_node.next = Node(data)
+         current_node = current_node.next
+
+
+
+
+# apple_node = Node("apple")
+# berry_node = Node("berry")
+# cherry_node = Node("cherry")
+# apple_node.next = berry_node
+# berry_node.next = cherry_node
+
+# list_of_linked_list = [apple_node, berry_node, cherry_node]
+
+data = ["Apple", "Berry", "Cherry"]
+
+llist = LinkedList()
+llist.create_from_list(data)
+llist.print_list()
 
 
